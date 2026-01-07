@@ -8,9 +8,7 @@ IMAGENET_STANDARD_STD = [0.5, 0.5, 0.5]
 
 
 def add_image_tokens_to_prompt(prefix_prompt, bos_token, image_seq_len, image_token):
-    # Quoting from the blog (https://huggingface.co/blog/paligemma#detailed-inference-process):
-
-    # refer to HF implementation: https://github.com/huggingface/transformers/blob/7f79a97399bb52aad8460e1da2f36577d5dccfed/src/transformers/models/paligemma/processing_paligemma.py#L55-L73
+   # implementation: https://github.com/huggingface/transformers/blob/7f79a97399bb52aad8460e1da2f36577d5dccfed/src/transformers/models/paligemma/processing_paligemma.py#L55-L73
     return f"{image_token * image_seq_len}{bos_token}{prefix_prompt}\n"
 
 
